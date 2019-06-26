@@ -1,8 +1,8 @@
 var icons = {
-    'success' : 'fas fa-check-circle',
-    'danger' : 'fas fa-times-circle',
-    'info' : 'fas fa-info-circle',
-    'warning' : 'fas fa-exclamation-triangle'
+    'success' : 'la la-check-circle',
+    'danger' : 'la la-times-circle',
+    'info' : 'la la-info-circle',
+    'warning' : 'la la-exclamation-triangle'
 };
 
 var dyn_functions = [];
