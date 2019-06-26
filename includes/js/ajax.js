@@ -24,7 +24,7 @@ $(document).ready(function(){
         $.ajax({
             data: thisForm.serialize(),
             type: thisForm.attr('method'),
-            url: core_url+'ajax.php?process='+process,
+            url: site_url+'ajax.php?process='+process,
             success: function(response) {
                 $(thisForm).find('.message').html('');
 
