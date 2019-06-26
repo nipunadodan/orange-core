@@ -60,11 +60,11 @@ dyn_functions['o1'] = function (json, thisForm) {
             }
         }else{
             $(thisForm).closest('div').find('.message').html('');
-            $('#success-modal .modal-content').attr('class','modal-content border-0 bg-'+json.status);
-            $('#success-modal .modal-body').html(json.message);
-            $('#success-modal #success-modal-title').html(json.status);
-            $('#success-modal #success-modal-icon').attr('class', icons[json.status]);
-            $('#success-modal').modal('toggle');
+            $('#response-modal .modal-content').attr('class','modal-content border-0 bg-'+json.status);
+            $('#response-modal .modal-body').html(json.message);
+            $('#response-modal #response-modal-title').html(json.status);
+            $('#response-modal #response-modal-icon').attr('class', icons[json.status]);
+            $('#response-modal').modal('toggle');
         }
     }
 };
