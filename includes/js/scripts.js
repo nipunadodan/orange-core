@@ -19,7 +19,7 @@ dyn_functions['o1'] = function (json, thisForm) {
     if(json.status === 'success'){
         if(reset == 'yes'){
             $(thisForm)[0].reset();
-            if (typeof res.response_id !== 'undefined' && typeof redirectUrl !== 'undefined' ) {
+            if (typeof json.response_id !== 'undefined' && typeof redirectUrl !== 'undefined' ) {
                 //console.log(res.response_id);
                 redirectUrl += '&id='+json.response_id;
             }
