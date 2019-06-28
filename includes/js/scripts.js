@@ -14,7 +14,7 @@ dyn_functions['o1'] = function (json, thisForm) {
     var popup = thisForm.data('popup');
     var scroll = thisForm.data('scroll');
     var alert = thisForm.data('alert');
-    var successModal = thisForm.data('successModal');
+    var successModal = thisForm.data('responsemodal');
 
     if(json.status === 'success'){
         if(reset == 'yes'){
@@ -46,7 +46,6 @@ dyn_functions['o1'] = function (json, thisForm) {
             }, 800);
         }
     }else{
-        console.log('success-modal');
         if(json.status === 'success' && successModal !== 'yes'){
             if(alert === 'yes') {
                 $(thisForm).find('.message').show(1000).html('<span class="alert alert-' + json.status + ' d-block">' + json.message + '</span>');
@@ -59,6 +58,7 @@ dyn_functions['o1'] = function (json, thisForm) {
                 }, 800);
             }
         }else{
+            console.log('success-modal');
             $(thisForm).closest('div').find('.message').html('');
             $('#response-modal .modal-content').attr('class','modal-content border-0 bg-'+json.status);
             $('#response-modal .modal-body').html(json.message);
