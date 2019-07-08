@@ -1,8 +1,8 @@
 var icons = {
-    'success' : 'fas fa-check-circle',
-    'danger' : 'fas fa-times-circle',
-    'info' : 'fas fa-info-circle',
-    'warning' : 'fas fa-exclamation-triangle'
+    'success' : 'la la-check-circle',
+    'danger' : 'la la-times-circle',
+    'info' : 'la la-info-circle',
+    'warning' : 'la la-exclamation-triangle'
 };
 
 var dyn_functions = [];
@@ -14,12 +14,12 @@ dyn_functions['o1'] = function (json, thisForm) {
     var popup = thisForm.data('popup');
     var scroll = thisForm.data('scroll');
     var alert = thisForm.data('alert');
-    var successModal = thisForm.data('successModal');
+    var successModal = thisForm.data('responsemodal');
 
     if(json.status === 'success'){
         if(reset == 'yes'){
             $(thisForm)[0].reset();
-            if (typeof res.response_id !== 'undefined' && typeof redirectUrl !== 'undefined' ) {
+            if (typeof json.response_id !== 'undefined' && typeof redirectUrl !== 'undefined' ) {
                 //console.log(res.response_id);
                 redirectUrl += '&id='+json.response_id;
             }
@@ -46,7 +46,6 @@ dyn_functions['o1'] = function (json, thisForm) {
             }, 800);
         }
     }else{
-        console.log('success-modal');
         if(json.status === 'success' && successModal !== 'yes'){
             if(alert === 'yes') {
                 $(thisForm).find('.message').show(1000).html('<span class="alert alert-' + json.status + ' d-block">' + json.message + '</span>');
@@ -59,12 +58,13 @@ dyn_functions['o1'] = function (json, thisForm) {
                 }, 800);
             }
         }else{
+            console.log('success-modal');
             $(thisForm).closest('div').find('.message').html('');
-            $('#success-modal .modal-content').attr('class','modal-content border-0 bg-'+json.status);
-            $('#success-modal .modal-body').html(json.message);
-            $('#success-modal #success-modal-title').html(json.status);
-            $('#success-modal #success-modal-icon').attr('class', icons[json.status]);
-            $('#success-modal').modal('toggle');
+            $('#response-modal .modal-content').attr('class','modal-content border-0 bg-'+json.status);
+            $('#response-modal .modal-body').html(json.message);
+            $('#response-modal #response-modal-title').html(json.status);
+            $('#response-modal #response-modal-icon').attr('class', icons[json.status]);
+            $('#response-modal').modal('toggle');
         }
     }
 };
