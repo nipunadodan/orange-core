@@ -1,7 +1,7 @@
 # Orange-core
 Lightweight PHP framework
 
-[![Version         ][packagist_badge]][packagist]
+[![Latest Stable Version](https://poser.pugx.org/nipunadodan/orange-core/v/stable)](https://packagist.org/packages/nipunadodan/orange-core) [![License](https://poser.pugx.org/nipunadodan/orange-core/license)](https://packagist.org/packages/nipunadodan/orange-core)
 
 ## Requirements
 * PHP 7.2+
