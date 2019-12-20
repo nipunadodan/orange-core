@@ -3,7 +3,7 @@
   "type": "library",
   "description": "Lightweight framework for PHP",
   "keywords": ["php","lightweight", "framework"],
-  "homepage": "https://bitbucket.org/nipunadodan/orange-core",
+  "homepage": "https://github.org/nipunadodan/orange-core/",
   "license": "MIT",
   "authors": [
     {
@@ -14,7 +14,7 @@
     }
   ],
   "require": {
-    "php": ">=5.6",
+    "php": ">=7.2",
     "catfan/medoo": "^1.6",
     "phpmailer/phpmailer": "^6.0"
   },
