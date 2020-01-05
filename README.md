@@ -10,7 +10,6 @@ Lightweight PHP framework
 * Enable MBString PHP Extension
  
  ## Dependencies
-* PHP-JWT : JWT token Genearation
 * cURL : Http communication with the payment gateway
 
 ## Installation

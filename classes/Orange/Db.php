@@ -1,6 +1,6 @@
 <?php
 
-namespace Db;
+namespace Orange;
 
 use Medoo\Medoo;
 
