@@ -139,8 +139,7 @@ class ApiConnect{
             }else{
                 $return = array(
                     'message' => $result,
-                    'status' => 'success',
-                    'respond' => 'Ok'
+                    'status' => 'success'
                 );
                 //return $result; //even though this is post something might come out, so catch it here
             }
@@ -151,7 +150,7 @@ class ApiConnect{
         return json_encode($return);
     }
 
-    public static function xputJSON($url, $data){
+    public static function xputJSON($url, $data){ //TODO: Proposed for deletion
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
