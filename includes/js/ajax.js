@@ -9,7 +9,7 @@
     echo json_encode($return);
  */
 
-function ajaxDirect(process, serialized, silent='No', method='post', callback=process){
+function ajaxDirect(process, serialized, silent='No',  callback=process, method='post'){
     process = process + '-process';
     if(debug === true)
         console.log('ajax-direct~'+process);
