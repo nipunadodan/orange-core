@@ -26,11 +26,23 @@ $(document).ready(function(){
             type: thisForm.attr('method'),
             url: site_url+'ajax.php?process='+process,
             success: function(response) {
+                let json;
                 $(thisForm).find('.message').html('');
 
-                console.log(response);
-                var json = JSON.parse(response);
-                //console.log(json);
+                try {
+                    json = JSON.parse(response);
+                } catch (e) {
+                    json = response;
+                }
+
+                if(debug === true)
+                    console.log(json);
+
+                if(json.status === 'sessionexired'){
+                    location.reload();
+                    return;
+                }
+
                 dyn_functions[func](json, thisForm);
             },
             error: function(jqXHR, textStatus, errorThrown) {
