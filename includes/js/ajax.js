@@ -21,6 +21,9 @@ $(document).ready(function(){
         $(thisForm).find('.message').html('<img src="'+site_url+'resources/img/waiting.gif" class="mx-auto d-block" width="80">');
         //$(thisForm).find('input[type="submit"]').prop('disabled', true);
 
+        var spinner = ' <i class="la la-circle-o-notch la-spin" id="spinner"></i>';
+        $('.nav-title').after(spinner);
+
         $.ajax({
             data: thisForm.serialize(),
             type: thisForm.attr('method'),
@@ -28,6 +31,7 @@ $(document).ready(function(){
             success: function(response) {
                 let json;
                 $(thisForm).find('.message').html('');
+                $('#spinner').remove();
 
                 try {
                     json = JSON.parse(response);
