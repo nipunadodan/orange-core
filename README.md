@@ -22,8 +22,8 @@ override the new secure-http default setting)*.
 ```json
 {
   "require": {
-  "php": ">=7.2",
-  "nipunadodan/orange-core": "^1.0.0"
+  "php": ">=7.3",
+  "nipunadodan/orange-core": "^3"
   }
 }
 ```

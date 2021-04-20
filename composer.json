@@ -9,14 +9,12 @@
     {
       "name": "Nipuna Dodantenna",
       "email": "nipuna@nipunadodan.com",
-      "homepage": "http://nipunadodan.com",
+      "homepage": "https://nipunadodan.com",
       "role": "Developer"
     }
   ],
   "require": {
     "php": ">=7.3",
-    "catfan/medoo": "^1.6",
-    "phpmailer/phpmailer": "^6.0",
     "ext-curl": "*",
     "ext-json": "*"
   },
@@ -24,5 +22,10 @@
     "psr-4": {
       "": "classes/"
     }
+  },
+  "suggest": {
+    "catfan/medoo": "REQUIRED if you are going to use Orange\\User class. Allows to do database queries more easily",
+    "phpmailer/phpmailer": "Allows sending mails through it",
+    "guzzlehttp/guzzle": "Allows communicating to APIs via http requests"
   }
 }
