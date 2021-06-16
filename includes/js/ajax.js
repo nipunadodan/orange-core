@@ -13,13 +13,16 @@ $(document).ready(function(){
     $('body').on('submit', 'form.ajax', function(event) {
         event.preventDefault();
 
-        console.log('ajax-init');
-
         var thisForm = $(this);
         var process = $(this).attr('name')+'-process';
         var func = $(this).data('func');
+
+        if(debug) {
+            console.log('ajax-init~' + process);
+        }
+
         $(thisForm).find('.message').html('<img src="'+site_url+'resources/img/waiting.gif" class="mx-auto d-block" width="80">');
-        //$(thisForm).find('input[type="submit"]').prop('disabled', true);
+        $(thisForm).find('input[type="submit"]').prop('disabled', true);
 
         var spinner = ' <i class="la la-circle-o-notch la-spin" id="spinner"></i>';
         $('.nav-title').after(spinner);
@@ -32,6 +35,7 @@ $(document).ready(function(){
                 let json;
                 $(thisForm).find('.message').html('');
                 $('#spinner').remove();
+                $(thisForm).find('input[type="submit"]').prop('disabled', false);
 
                 try {
                     json = JSON.parse(response);
@@ -39,8 +43,9 @@ $(document).ready(function(){
                     json = response;
                 }
 
-                if(debug === true)
+                if(debug === true) {
                     console.log(json);
+                }
 
                 if(json.status === 'sessionexired'){
                     location.reload();
